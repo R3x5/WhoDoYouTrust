@@ -5,28 +5,28 @@ authorized identity. Its primary security objective is not to determine *who* th
 but to ensure that any authorization decision is derived from an identity whose control
 has not been interrupted since authentication.
 
-> [!quote]
+## 📌 **Quote (RFC 4120 Section 1.1)**  
 >    The basic Kerberos authentication process proceeds as follows: A
->    client sends a request to the authentication server (AS) for
->    "credentials" for a given server.  The AS responds with these
->    credentials, encrypted in the client's key.  The credentials consist
->    of a "ticket" for the server and a temporary encryption key (often
->    called a "session key").  The client transmits the ticket (which
->    contains the client's identity and a copy of the session key, all
->    encrypted in the server's key) to the server.  The session key (now
->    shared by the client and server) is used to authenticate the client
->    and may optionally be used to authenticate the server.  It may also
->    be used to encrypt further communication between the two parties or
->    to exchange a separate sub-session key to be used to encrypt further
->    communication.  Note that many applications use Kerberos' functions
->    only upon the initiation of a stream-based network connection.
->    Unless an application performs encryption or integrity protection for
->    the data stream, the identity verification applies only to the
->    initiation of the connection, and it does not guarantee that
->    subsequent messages on the connection originate from the same
->    principal.
->    
->    **Link**: https://datatracker.ietf.org/doc/html/rfc4120#section-1.1
+    client sends a request to the authentication server (AS) for
+    "credentials" for a given server.  The AS responds with these
+    credentials, encrypted in the client's key.  The credentials consist
+    of a "ticket" for the server and a temporary encryption key (often
+    called a "session key").  The client transmits the ticket (which
+    contains the client's identity and a copy of the session key, all
+    encrypted in the server's key) to the server.  The session key (now
+    shared by the client and server) is used to authenticate the client
+    and may optionally be used to authenticate the server.  It may also
+    be used to encrypt further communication between the two parties or
+    to exchange a separate sub-session key to be used to encrypt further
+    communication.  Note that many applications use Kerberos' functions
+    only upon the initiation of a stream-based network connection.
+    Unless an application performs encryption or integrity protection for
+    the data stream, the identity verification applies only to the
+    initiation of the connection, and it does not guarantee that
+    subsequent messages on the connection originate from the same
+    principal.
+    
+    Link: https://datatracker.ietf.org/doc/html/rfc4120#section-1.1
 
 Unlike the AS stage, when constructing the TGS-REQ, the client must provide the following information:
 
@@ -46,7 +46,7 @@ Unlike the AS stage, when constructing the TGS-REQ, the client must provide the 
 
 These assertions are not mere claims. Each of them must be **independently** validated by the KDC using cryptographic material already bound to the established identity. Failure to validate any single assertion results in immediate rejection of the request.
 
-> [!info]
+
 > *For clarity, the following section first presents a complete TGS processing skeleton.*  
 > *The analysis that follows focuses only on the security-critical checks within this flow.*
 
@@ -115,7 +115,7 @@ if (!tgt_plain.valid) {
 
 - At this point, the KDC has not learned anything new about the client's identity. Instead, it has verified a single invariant: the entity making the request still controls the cryptographic material that was bound to the authenticated identity during the AS stage. All subsequent authorization decisions rely on this invariant remaining true.
 
-> [!quote]
+## 📌 **Quote (RFC 4120 Section 1.1)**  
 >    *To verify the identities of the principals in a transaction, the*
 >    *client transmits the ticket to the application server.  Because the*
 >    *ticket is sent "in the clear" (parts of it are encrypted, but this*
@@ -217,7 +217,7 @@ The service ticket embodies Kerberos’s capability-based design. Possession of 
 
 **_Reference_** : https://www.geeksforgeeks.org/computer-networks/ticket-granting-server-tgs/
 
-![[Pasted image 20260101201251.png]]
+![img](./Images/Pasted%20image%2020260101201251.png)
 
 ```C
 Ticket service_ticket = Encrypt(
