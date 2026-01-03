@@ -26,7 +26,6 @@ getST.py -spn http/dc01.rebound.htb -impersonate administrator 'rebound.htb/dele
 [-] Probably SPN is not allowed to delegate by user delegator$ or initial TGT not forwardable
 ```
 
-> [!quote]
 > It is using S4U2Self to get a ticket for the administrator user for `delegator$`, and then trying to use S4U2Proxy to forward it, but it doesn’t work. The `-self` flag tells `getST.py` to stop after the S4U2Self, getting a ticket for administrator for delegator$. The resulting ticket is missing the forwardable flag
 > 
 > Link: https://0xdf.gitlab.io/2024/03/30/htb-rebound.html#constrained-delegation
@@ -69,7 +68,7 @@ S4U2Self (forwardable) → S4U2Proxy → Administrator → HTTP/dc01
 
 _The following diagram illustrates the permitted S4U2Self → S4U2Proxy flow when Protocol Transition is enabled, as commonly presented in training materials (e.g. [CRTE](https://www.alteredsecurity.com/redteamlab))._
 
-![[KCD_with_PT.png]]
+![img](./Images/KCD_with_PT.png)
 > This is the canonical delegation flow taught in advanced AD courses (e.g. [CRTE](https://www.alteredsecurity.com/redteamlab)), which implicitly assumes Protocol Transition is enabled.
 
 
