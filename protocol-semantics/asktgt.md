@@ -2,7 +2,7 @@ The `asktgt` operation represents the canonical execution of the Kerberos Authen
 
 Rather than bypassing authentication, it fulfills the protocol’s intended requirement: the client must demonstrate knowledge of the user’s long-term key before the KDC is willing to issue initial credentials.
 
-In the `asktgt`technique, the AS-REQ phase is highly similar to that of [[asreproasting]]. The critical distinction is that `asktgt`provides `PA_DATA`.
+In the `asktgt`technique, the AS-REQ phase is highly similar to that of [asreproasting](https://github.com/R3x5/WhoDoYouTrust/blob/main/protocol-semantics/asreproasting.md). The critical distinction is that `asktgt`provides `PA_DATA`.
 
 ```C
 AS_REQ req;
