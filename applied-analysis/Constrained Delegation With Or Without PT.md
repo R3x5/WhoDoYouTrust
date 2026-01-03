@@ -68,7 +68,7 @@ S4U2Self (forwardable) → S4U2Proxy → Administrator → HTTP/dc01
 
 _The following diagram illustrates the permitted S4U2Self → S4U2Proxy flow when Protocol Transition is enabled, as commonly presented in training materials (e.g. [CRTE](https://www.alteredsecurity.com/redteamlab))._
 
-![img](./Images/KCD_with_PT.png)
+![img](/Images/KCD_with_PT.png)
 > This is the canonical delegation flow taught in advanced AD courses (e.g. [CRTE](https://www.alteredsecurity.com/redteamlab)), which implicitly assumes Protocol Transition is enabled.
 
 
