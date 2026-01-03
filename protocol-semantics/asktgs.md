@@ -217,7 +217,7 @@ The service ticket embodies Kerberos’s capability-based design. Possession of 
 
 **_Reference_** : https://www.geeksforgeeks.org/computer-networks/ticket-granting-server-tgs/
 
-![img](./Images/Pasted%20image%2020260101201251.png)
+![img](/Images/Pasted%20image%2020260101201251.png)
 
 ```C
 Ticket service_ticket = Encrypt(
