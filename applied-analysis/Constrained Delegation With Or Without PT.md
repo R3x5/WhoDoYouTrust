@@ -55,6 +55,12 @@ delegator$ → S4U2Self → KDC
 
 The key point is that `delegator$`does not receive a genuine user ticket from `Administrator → delegator$`as input. Consequently, the KDC can only return a synthetic and non-forwardable Service Ticket (see [asktgt](https://github.com/R3x5/WhoDoYouTrust/blob/main/protocol-semantics/asktgt.md)). It's worth noting that this behavior is mandated by the Kerberos specification.
 
+--------------------------------------------------------------------------
+
+***It is worth noting that the author’s solution may lead some readers to assume that the compromise was achieved purely through Resource-Based Constrained Delegation (RBCD). In reality, the successful escalation was the result of an intentional interaction between RBCD and traditional Constrained Delegation (KCD).***
+
+***Specifically, in a KCD configuration without Protocol Transition, the service is unable to generate a forwardable user identity, thereby failing to satisfy the prerequisite for S4U2Proxy. To compensate for this limitation, RBCD was leveraged to obtain a forwardable user-to-service Service Ticket, which served as the missing input required by S4U2Proxy.***
+
 
 ### What if PT enabled?
 
