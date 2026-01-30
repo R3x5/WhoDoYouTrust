@@ -1,16 +1,3 @@
-
-Syllabus
-└── [[#🎫 Tickets]]
-		├── [[#🥇 Golden Ticket]]
-		├── [[#🥈 Silver Ticket]]
-		└── [[#📜 PAC]]
-└── [[#🔗 Delegation]]
-		├── [[#🪤 Unconstrained Delegation]]
-		├── [[#🔒 Kerberos Constrained Delegation (KCD)]]
-		└── [[#🧩 Resource-Based Constrained Delegation (RBCD)]]
-
-
-
 # 🎫 Tickets
 
 
