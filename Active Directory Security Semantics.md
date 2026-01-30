@@ -91,30 +91,6 @@ ST_B = Encrypt(
 
 **Silver Tickets** follow the same logic as Golden Tickets. The difference is that Silver Tickets require possession of a **service account key** and involve forging the _result_ of the TGS phase—specifically, the **TGS-REP**—again without any interaction with the KDC. (see [TGS phase](https://github.com/R3x5/WhoDoYouTrust/blob/main/protocol-semantics/asktgs.md))
 
-```C
-// attacker controls trust_key_AB
-
-k_ab = attacker_chosen_key();
-
-fake_interrealm_TGT = Encrypt(
-    key = trust_key_AB,
-    data = {
-        sname = "krbtgt/B",
-        client = "Administrator@A",
-        session_key = k_ab,
-
-        PAC = {
-            UserSID = A\DomainSID + RID(500),
-            ExtraSIDs = [
-                B\DomainSID + RID(512)   // Domain Admin in B
-            ]
-        },
-        times,
-        flags
-    }
-);
-```
-
 
 ## 📜 PAC
 
